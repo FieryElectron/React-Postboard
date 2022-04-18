@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matchs snapshot 1 1`] = `
+<div
+  className="singlePostContainer"
+  data-testid="singlePostContainer"
+>
+  <div
+    className="ownerName"
+    data-testid="ownerName"
+  >
+    ownerName
+  </div>
+  <div
+    className="postContent"
+    data-testid="postContent"
+  >
+    Content
+  </div>
+  <hr />
+  <div
+    className="timeStampContainer"
+    data-testid="timeStampContainer"
+  >
+    <span
+      className="timeStamp"
+      data-testid="timeStamp"
+    >
+      timestamp
+    </span>
+    <button
+      className="button"
+      data-testid="button"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#E62E2E",
+        }
+      }
+    >
+      Delete
+    </button>
+  </div>
+</div>
+`;

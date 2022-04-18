@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matchs snapshot 1 1`] = `
+<div>
+  <div
+    className="headerContainer"
+    data-testid="headerContainer"
+  >
+    <h1
+      className="header"
+      data-testid="header"
+    >
+      Sign In
+    </h1>
+  </div>
+  <div
+    className="inputContainer"
+    data-testid="inputContainer"
+  >
+    <input
+      className="input"
+      data-testid="input"
+      placeholder="Username"
+      type="type"
+    />
+  </div>
+  <div
+    className="inputContainer"
+    data-testid="inputContainer"
+  >
+    <input
+      className="input"
+      data-testid="input"
+      placeholder="Password"
+      type="Password"
+    />
+  </div>
+  <br />
+  <button
+    className="button"
+    data-testid="button"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#0071FE",
+      }
+    }
+  >
+    Sign Up
+  </button>
+  <button
+    className="button"
+    data-testid="button"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#0071FE",
+      }
+    }
+  >
+    Sign In
+  </button>
+  <br />
+  <button
+    className="button"
+    data-testid="button"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#0071FE",
+      }
+    }
+  >
+    Google
+  </button>
+</div>
+`;

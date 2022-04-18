@@ -1,0 +1,9 @@
+.headerContainer {
+    background-color: #FAFAFA;
+    border-bottom: 2px solid gray;
+}
+
+.header {
+    margin: 0;
+    padding: 5px;
+}

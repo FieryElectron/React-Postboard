@@ -25,7 +25,7 @@ exports[`matchs snapshot 2 1`] = `
     data-testid="input"
     onChange={[MockFunction]}
     placeholder="username"
-    type="type"
+    type="text"
   />
 </div>
 `;

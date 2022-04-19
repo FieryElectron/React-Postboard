@@ -15,13 +15,13 @@ const SignInPage = () => {
 
     const signIn = () => {
 
-    }
+    } 
 
     return (
         <div>
             <Header title='Sign In' />
             <Input placeholder='Username' />
-            <Input placeholder='Password' type='Password'/>
+            <Input placeholder='Password' type='password'/>
 
             <br />
             <Button text='Sign Up' onClick={signUp} />

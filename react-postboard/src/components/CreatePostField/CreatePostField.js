@@ -36,7 +36,7 @@ const CreatePostField = () => {
             
             toast.info(res.data.info, {
                 position: "top-center",
-                autoClose: 2000,
+                autoClose: 1000,
                 pauseOnFocusLoss:false,
             });
 
@@ -48,7 +48,7 @@ const CreatePostField = () => {
         if(res.data.info){
             toast.info(res.data.info, {
                 position: "top-center",
-                autoClose: 2000,
+                autoClose: 1000,
                 pauseOnFocusLoss:false,
             });
         }

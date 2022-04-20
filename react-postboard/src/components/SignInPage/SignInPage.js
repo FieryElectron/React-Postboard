@@ -13,11 +13,29 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { getAuthApis } from '../../store/authApisSlice';
 
+import { GoogleLogin } from 'react-google-login';
+
+import { gapi } from 'gapi-script';
+
+import GoogleSignInButton from '../GoogleSignInButton/GoogleSignInButton';
+
+const clientId = "814988127498-eq6qcj44llof26n4i4t9nn1v58mn97la.apps.googleusercontent.com"
+
 const SignInPage = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
       dispatch(getAuthApis());
+      
+
+      function start(){
+        gapi.client.init({
+            clientId:clientId,
+            scope:"profile",
+        })
+      }
+
+      gapi.load('client:auth2', start);
     }, [dispatch]); 
 
     const navigate = useNavigate();
@@ -43,7 +61,7 @@ const SignInPage = () => {
 
         toast.info(res.data.info, {
             position: "top-center",
-            autoClose: 2000,
+            autoClose: 1000,
             pauseOnFocusLoss:false,
         });
     }
@@ -54,7 +72,7 @@ const SignInPage = () => {
 
         toast.info(res.data.info, {
             position: "top-center",
-            autoClose: 2000,
+            autoClose: 1000,
             pauseOnFocusLoss:false,
         });
         
@@ -78,7 +96,7 @@ const SignInPage = () => {
             <Button text='Sign Up' onClick={signUp} />
             <Button text='Sign In' onClick={signIn} />
             <br />
-            <Button text='Google' onClick={loginGoogle} />
+            <GoogleSignInButton/>
 
         </div>
     )

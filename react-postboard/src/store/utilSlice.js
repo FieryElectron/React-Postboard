@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { getPosts } from "./postsSlice";
+
+import { useDispatch } from "react";
+import { useNavigate } from 'react-router-dom';
+
 const utilSlice = createSlice({
     name: 'util',
     initialState: {

@@ -1,8 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { utilActions } from './utilSlice';
+import $ from 'jquery';
+
+
+
 
 
 const refreshAccessToken = async (tokenUrl) => {
@@ -15,25 +19,36 @@ const tryPostPagination = async (thunkAPI, navigate, postUrl, tokenUrl, reTry) =
     const page = thunkAPI.getState().util.selectedPage;
     const fromDate = thunkAPI.getState().util.fromDate;
     const toDate = thunkAPI.getState().util.toDate;
+    
 
-    console.log("tryPostPagination");
+    console.log("tryPostPagination",page);
 
     const from = new Date(fromDate).getTime();
     const to = new Date(toDate).getTime();
 
-    const query = new URLSearchParams();
-    query.append('from', from);
-    query.append('to', to);
-    query.append('page', page);
-
     const res = await axios.get(postUrl + `?from=` + from + `&to=` + to + `&page=` +page, {withCredentials: true});
 
     if(res.data.flag){
+        // console.log(res.data.pages,page);
+
+        let withoutContentPage = false;
+
+        if(res.data.pages < page && res.data.pages > 0){
+            withoutContentPage = true;
+        }
         let pages = [];
         for(let i=0;i<res.data.pages;++i){
             pages.push(i+1);
         }
         thunkAPI.dispatch(utilActions.setPages(pages));
+
+        if(withoutContentPage){
+            const lastPage = pages.at(-1);
+            thunkAPI.dispatch(utilActions.setSelectedPage(lastPage));
+            $("#pageSelectorId").val(lastPage);
+
+            return await tryPostPagination(thunkAPI, navigate, postUrl, tokenUrl, true);
+        }
 
         return res.data.posts;
     }
@@ -46,7 +61,7 @@ const tryPostPagination = async (thunkAPI, navigate, postUrl, tokenUrl, reTry) =
         }else{
             // toast.info("Back to Sign In Page!", {
             //     position: "top-center",
-            //     autoClose: 2000,
+            //     autoClose: 1000,
             //     pauseOnFocusLoss:false,
             // });
             

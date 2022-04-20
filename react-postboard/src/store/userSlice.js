@@ -27,7 +27,7 @@ const tryLoadProfile = async (loadprofileUrl, tokenUrl, navigate, reTry) => {
 
             // toast.info("Back to Sign In Page!", {
             //     position: "top-center",
-            //     autoClose: 2000,
+            //     autoClose: 1000,
             //     pauseOnFocusLoss:false,
             // });
             

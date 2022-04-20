@@ -59,13 +59,13 @@ const SinglePost = ( post ) => {
     }
 
     return (
-        <div className='singlePostContainer'>
-            <div  className='ownerName'>{post.post.username}</div>
-            <div className='postContent'>{post.post.content}</div>
+        <div data-testid='singlePostContainer' className='singlePostContainer'>
+            <div data-testid='ownerName'  className='ownerName'>{post.post.username}</div>
+            <div data-testid='postContent'  className='postContent'>{post.post.content}</div>
             <hr></hr>
 
-            <div className='timeStampContainer'>
-                <span className='timeStamp'>{new Date(post.post.timestamp).toLocaleDateString("en-US")}</span>
+            <div data-testid='timeStampContainer' className='timeStampContainer'>
+                <span data-testid='timeStamp' className='timeStamp'>{new Date(post.post.timestamp).toLocaleDateString("en-US")}</span>
                 {currentUsername === post.post.username && <Button text='Delete' color='#E62E2E' onClick={tryDeletePost}></Button>}
                 
             </div>

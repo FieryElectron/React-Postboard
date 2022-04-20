@@ -69,7 +69,7 @@ const CreatePostField = () => {
     }
 
     return (
-        <div className='createPostFieldContainer'>
+        <div data-testid='createPostFieldContainer'  className='createPostFieldContainer'>
             <Input placeholder='Post Content' onChange={contentOnChange}/>
             <Button text='Create' color='#38DD38' onClick={tryCreatePost} />
         </div>

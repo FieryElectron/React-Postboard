@@ -36,11 +36,11 @@ const TimeSelector = () => {
     }
 
     return (
-        <div className='timeSelectorContainer'>
-            <h3 className='timeSelectorTitle'>From</h3>
-            <input id='dateFrom' type='date' className='timeSelectorDate' onChange={dateFromOnchange} value={fromDate}></input>
-            <h3 className='timeSelectorTitle'>To</h3>
-            <input id='dateTo' type='date' className='timeSelectorDate' onChange={dateToOnchange}  value={toDate}></input>
+        <div data-testid='timeSelectorContainer' className='timeSelectorContainer'>
+            <h3 data-testid='timeSelectorTitle1' className='timeSelectorTitle'>From</h3>
+            <input data-testid='timeSelectorDate1' id='dateFrom' type='date' className='timeSelectorDate' onChange={dateFromOnchange} value={fromDate}></input>
+            <h3 data-testid='timeSelectorTitle2' className='timeSelectorTitle'>To</h3>
+            <input data-testid='timeSelectorDate2' id='dateTo' type='date' className='timeSelectorDate' onChange={dateToOnchange}  value={toDate}></input>
             <Button text='Refresh Posts' onClick={RefreshPosts} />
         </div>
     )

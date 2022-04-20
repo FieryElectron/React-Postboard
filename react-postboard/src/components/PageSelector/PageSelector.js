@@ -22,9 +22,9 @@ const PageSelector = () => {
     }
 
     return (
-        <div className='pageSelectorContainer'>
-            <span className='pageSelectorTitle'>Page</span>
-            <select className='pageSelectorSelect' onChange={selectedPageOnChange}>
+        <div data-testid='pageSelectorContainer' className='pageSelectorContainer'>
+            <span data-testid='pageSelectorTitle' className='pageSelectorTitle'>Page</span>
+            <select data-testid='pageSelectorSelect' className='pageSelectorSelect' onChange={selectedPageOnChange}>
                 {pages.map((index) => <option key={index} value={index} >{index}</option>)}
             </select>
         </div>

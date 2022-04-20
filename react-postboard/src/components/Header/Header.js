@@ -8,8 +8,8 @@ const Header = ({ title }) => {
 
     const username = useSelector((state) => state.user.user.username);
     return (
-        <div className='headerContainer'>
-            <h1 className="header">{title}</h1>
+        <div data-testid='headerContainer' className='headerContainer'>
+            <h1 data-testid='header' className="header">{title}</h1>
             {location.pathname === "/postboard" && <span className='profile'><FaUserAlt color='blue' size={30} /> {username}</span>}
         </div>
     )

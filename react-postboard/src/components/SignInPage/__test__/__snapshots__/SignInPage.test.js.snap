@@ -20,7 +20,9 @@ exports[`matchs snapshot 1 1`] = `
     <input
       className="input"
       data-testid="input"
+      onChange={[Function]}
       placeholder="Username"
+      spellCheck="false"
       type="text"
     />
   </div>
@@ -31,7 +33,9 @@ exports[`matchs snapshot 1 1`] = `
     <input
       className="input"
       data-testid="input"
+      onChange={[Function]}
       placeholder="Password"
+      spellCheck="false"
       type="password"
     />
   </div>

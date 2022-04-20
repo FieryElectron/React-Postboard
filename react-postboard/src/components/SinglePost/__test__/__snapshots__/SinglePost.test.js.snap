@@ -8,15 +8,11 @@ exports[`matchs snapshot 1 1`] = `
   <div
     className="ownerName"
     data-testid="ownerName"
-  >
-    ownerName
-  </div>
+  />
   <div
     className="postContent"
     data-testid="postContent"
-  >
-    Content
-  </div>
+  />
   <hr />
   <div
     className="timeStampContainer"
@@ -26,20 +22,8 @@ exports[`matchs snapshot 1 1`] = `
       className="timeStamp"
       data-testid="timeStamp"
     >
-      timestamp
+      Invalid Date
     </span>
-    <button
-      className="button"
-      data-testid="button"
-      onClick={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#E62E2E",
-        }
-      }
-    >
-      Delete
-    </button>
   </div>
 </div>
 `;

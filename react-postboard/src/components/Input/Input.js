@@ -2,8 +2,8 @@ import './Input.css';
 
 const Input = ({ placeholder, type , onChange}) => {
     return (
-        <div className='inputContainer'>
-            <input className="input" placeholder={placeholder} type={type} onChange={onChange} spellCheck="false"/>
+        <div data-testid='inputContainer' className='inputContainer'>
+            <input data-testid='input' className="input" placeholder={placeholder} type={type} onChange={onChange} spellCheck="false"/>
         </div>
     )
 }

@@ -6,6 +6,10 @@ import '@testing-library/jest-dom/extend-expect';
 
 import TimeSelector from '../TimeSelector';
 
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Provider } from 'react-redux';
+import store from '../../../store';
+
 
 let container;
 
@@ -21,12 +25,12 @@ afterEach(() => {
 
 it("renders timeSelector without crashing", ()=>{
     act(() => {
-        ReactDOM.createRoot(container).render(<TimeSelector/>);
+        ReactDOM.createRoot(container).render(<Provider store={store}><Router><TimeSelector/></Router></Provider>);
     });
 });
 
 it("renders timeSelector class correctly", ()=>{
-    const {getByTestId} = render(<TimeSelector/>);
+    const {getByTestId} = render(<Provider store={store}><Router><TimeSelector/></Router></Provider>);
     expect(getByTestId('timeSelectorContainer')).toHaveAttribute('class', 'timeSelectorContainer');
     expect(getByTestId('timeSelectorTitle1')).toHaveAttribute('class', 'timeSelectorTitle');
     expect(getByTestId('timeSelectorDate1')).toHaveAttribute('class', 'timeSelectorDate');
@@ -36,6 +40,6 @@ it("renders timeSelector class correctly", ()=>{
 
  
 it("matchs snapshot 1", ()=>{
-    const tree = renderer.create(<TimeSelector/>).toJSON();
+    const tree = renderer.create(<Provider store={store}><Router><TimeSelector/></Router></Provider>).toJSON();
     expect(tree).toMatchSnapshot();
   });

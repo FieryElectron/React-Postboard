@@ -10,6 +10,7 @@ exports[`matchs snapshot 1 1`] = `
     data-testid="input"
     onChange={[MockFunction]}
     placeholder="placeholder"
+    spellCheck="false"
     type="Password"
   />
 </div>
@@ -25,6 +26,7 @@ exports[`matchs snapshot 2 1`] = `
     data-testid="input"
     onChange={[MockFunction]}
     placeholder="username"
+    spellCheck="false"
     type="text"
   />
 </div>

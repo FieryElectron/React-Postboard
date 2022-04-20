@@ -6,6 +6,8 @@ import '@testing-library/jest-dom/extend-expect';
 import { BrowserRouter as Router} from 'react-router-dom'
 
 import SignInPage from '../SignInPage';
+import { Provider } from 'react-redux';
+import store from '../../../store';
 
 
 let container;
@@ -22,11 +24,11 @@ afterEach(() => {
 
 it("renders signInPage without crashing", ()=>{
     act(() => {
-        ReactDOM.createRoot(container).render(<Router><SignInPage/></Router>);
+        ReactDOM.createRoot(container).render(<Provider store={store}><Router><SignInPage/></Router></Provider>);
     });
 });
 
 it("matchs snapshot 1", ()=>{
-  const tree = renderer.create(<Router><SignInPage/></Router>).toJSON();
+  const tree = renderer.create(<Provider store={store}><Router><SignInPage/></Router></Provider>).toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -14,6 +14,7 @@ exports[`matchs snapshot 1 1`] = `
   <select
     className="pageSelectorSelect"
     data-testid="pageSelectorSelect"
+    id="pageSelectorId"
     onChange={[Function]}
   >
     <option

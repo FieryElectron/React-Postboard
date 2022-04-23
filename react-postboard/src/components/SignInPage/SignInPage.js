@@ -19,7 +19,7 @@ import { gapi } from 'gapi-script';
 
 import GoogleSignInButton from '../GoogleSignInButton/GoogleSignInButton';
 
-const clientId = "814988127498-eq6qcj44llof26n4i4t9nn1v58mn97la.apps.googleusercontent.com"
+const clientId = process.env.REACT_APP_CLIENT_ID;
 
 const SignInPage = () => {
     const dispatch = useDispatch();

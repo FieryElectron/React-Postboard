@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const clientId = "814988127498-eq6qcj44llof26n4i4t9nn1v58mn97la.apps.googleusercontent.com"
+const clientId = process.env.REACT_APP_CLIENT_ID;
 
 
 const GoogleSignInButton = () => {
